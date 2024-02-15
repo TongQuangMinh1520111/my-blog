@@ -1,0 +1,377 @@
+.btn {
+  @include buttonStyle;
+
+  &-primary {
+    color: $color-white;
+    background-color: #0D5CCA80;
+    padding: 9px 20px;
+    border-radius: 25px;
+    font-size: $font-md;
+
+
+    &.active,
+    &:hover {
+      color: $color-white;
+      background-color: $color-primary;
+    }
+
+    &--style01 {
+      color: $color-white;
+      background-color: $color-primary;
+      width: 100%;
+      justify-content: center;
+
+      &.active,
+      &:hover {
+        background-color: $color-page !important;
+      }
+    }
+
+    &--style02 {
+      display: flex;
+      color: $color-white;
+      background-color: $color-primary;
+      width: auto;
+      min-width: 125px;
+      justify-content: center;
+      margin: 15px auto 0;
+
+      &.active,
+      &:hover {
+        background-color: $color-page !important;
+      }
+    }
+
+    @include media-max($break-point) {
+      font-size: $font-lg;
+      padding: 13px 0px;
+
+      &--style02 {
+        min-width: 200px;
+        margin: 30px auto 0;
+      }
+    }
+  }
+
+  &-secondary {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: $font-sm;
+    vertical-align: bottom;
+
+    i {
+      transition: all 0.3s ease-in-out;
+      color: $color-primary;
+      font-size: 30px;
+    }
+
+    &.active,
+    &:hover {
+      i {
+        color: $color-white;
+      }
+    }
+
+    &--01 {
+      i {
+        color: $color-page;
+        font-size: 17px;
+      }
+    }
+
+    @include media-max($break-point) {
+      font-size: $font-lg;
+      padding: 14px 20px;
+
+    }
+  }
+
+  &-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+
+    i {
+      font-size: 30px;
+    }
+
+    &--01 {
+      width: 30px;
+      height: 30px;
+      background: #fff;
+      border-radius: 50%;
+
+      i {
+        color: $color-page;
+        font-size: 20px;
+      }
+    }
+
+    &--02 {
+      i {
+        color: $color-page;
+      }
+    }
+    @include media-max($break-point) {
+      i {
+        font-size: 40px;
+      }
+
+      &--01 {
+        width: 40px;
+        height: 40px;
+        i {
+          font-size: 25px;
+        }
+      }
+    }
+
+  }
+
+  &-clear,
+  &-sent {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    background-color: $color-gray-100;
+    border: none;
+    cursor: pointer;
+    flex: 0 0 40px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+
+    i {
+      transition: all 0.3s ease-in-out;
+      font-size: 20px;
+      color: $color-gray-500;
+    }
+
+    @include media-min(1025px) {
+      &:hover {
+        background-color: $color-primary;
+
+        i {
+          color: $color-white;
+        }
+
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+
+    @include media-max($break-point) {
+      width: 35px;
+      height: 35px;
+
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &-lg {
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+
+    @include media-max($break-point) {
+      width: 100px;
+      height: 100px;
+
+      i {
+        font-size: 45px;
+      }
+    }
+
+    @include media-max(390px) {
+      width: 25vw;
+      height: 25vw;
+
+      i {
+        font-size: 11.538vw;
+      }
+    }
+  }
+
+  &-md {
+    width: 64px;
+    height: 46px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+
+    @include media-max($break-point) {
+      width: 100px;
+      height: 74px;
+      font-size: $font-lg;
+    }
+
+    @include media-max(390px) {
+      width: 25.641vw;
+      height: 18.974vw;
+    }
+  }
+
+  &-popup {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0;
+  }
+
+  &-chat {
+    display: flex;
+    min-width: 168px;
+    border: none;
+    background-color: $color-primary;
+    border-radius: 20px;
+    color: $color-white;
+    font-size: $font-md;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    padding: 9px 20px;
+
+    // &.click,
+    &.no-selected-resel {
+      opacity: .5;
+    }
+
+    &:hover {
+      color: $color-white;
+      background-color: $color-page;
+    }
+
+    &--01 {
+      min-width: auto;
+    }
+
+    @include media-max($break-point) {
+      padding: 10px 20px;
+    }
+  }
+
+  &-modal {
+    display: flex;
+    width: 125px;
+    color: $color-white;
+    background-color: $color-primary;
+    justify-content: center;
+    border-radius: 20px;
+    font-size: $font-md;
+    padding: 9px 20px;
+    margin: 20px auto 0;
+
+    &.active,
+    &:hover {
+      background-color: $color-page !important;
+    }
+  }
+
+  &-tab {
+    i {
+      font-size: 20px;
+      color: $color-white;
+    }
+  }
+}
+
+.disable {
+  pointer-events: none;
+}
+
+.link {
+  width: 100%;
+  border-bottom: 1px solid #E8ECF0;
+
+  .sub-ttl,
+  a {
+    display: flex;
+    width: 100%;
+    color: #242424;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 15px;
+
+    &:hover {
+      color: #fff;
+      background: $color-page;
+    }
+  }
+
+  .sub {
+    display: none;
+  }
+
+  .sub-ttl {
+    position: relative;
+
+    i {
+      display: block;
+      color: $color-page;
+      font-size: 16px;
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      transition: all .25s ease;
+    }
+
+    &:hover {
+      i {
+        color: $color-white;
+      }
+    }
+
+    &.active {
+      color: #fff;
+      background: $color-page;
+
+      i {
+        color: $color-white;
+        transform: translateY(-50%) rotate(-180deg);
+      }
+    }
+  }
+
+  .sub-link {
+    a {
+      background: #F6F6F6;
+      padding: 15px 15px 15px 40px;
+
+      &:hover {
+        color: #fff;
+        background: $color-page;
+      }
+    }
+  }
+
+  @include media-max($break-point) {
+
+    .sub-ttl,
+    a {
+      padding: 18px 20px;
+    }
+
+    .sub-link a {
+      padding: 18px 20px 18px 40px;
+    }
+  }
+}

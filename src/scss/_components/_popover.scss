@@ -1,0 +1,26 @@
+.popover {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 10px;
+  background-color: $color-red-500;
+  color: $color-white;
+  position: relative;
+  padding: 0 13px 0 25px;
+  min-height: 60px;
+  border-radius: 50px;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: $color-red-500;
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  @include media-max($break-point) {
+    display: none;
+  }
+}

@@ -1,0 +1,51 @@
+@function spvw($decimal) {
+  $value: 1;
+  $value: calc($decimal / 375 * 100vw);
+  @return $value;
+}
+
+@function pcvw($decimal) {
+  $value: 1;
+  $value: calc($decimal / 1440 * 100vw);
+  @return $value;
+}
+
+@mixin media-max($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin media-min($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin transition {
+	transition: all 0.3s ease-in-out;
+}
+
+@mixin buttonStyle {
+	border: none;
+	cursor: pointer;
+	@include transition;
+	display: inline-flex;
+	align-items: center;
+	background-color: $color-white;
+
+	&:not(.btn-nohover) {
+		&.active,
+		&:hover {
+			color: $color-white;
+			background-color: $color-primary;
+
+			svg {
+				path {
+					fill: #fff;
+				}
+			}
+		}
+	}
+
+}

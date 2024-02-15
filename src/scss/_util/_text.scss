@@ -1,0 +1,25 @@
+.text-center {
+  text-align: center !important;
+}
+
+.text-gray-300 {
+  color: $color-gray-300;
+}
+
+.font-sm {
+  font-size: $font-sm;
+}
+
+.font-lg {
+  font-size: $font-lg;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-link {
+  text-decoration: underline;
+  color: $color-primary;
+  word-break: break-word;
+}

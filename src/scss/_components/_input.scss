@@ -1,0 +1,182 @@
+.textarea {
+  position: relative;
+
+  &-input {
+    padding: 15px 15px 35px;
+    height: 120px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    box-sizing: border-box;
+    resize: none;
+
+    &::placeholder {
+      font-size: 12px;
+      color: #d4d4d4;
+    }
+
+    @include media-max($break-point) {
+      height: 190px;
+
+      &::placeholder {
+        font-size: $font-lg;
+      }
+    }
+  }
+
+  &-count {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    color: #d4d4d4;
+  }
+}
+
+.checkboxToggle {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  flex-shrink: 0;
+
+  &-icon {
+    width: 42px;
+    height: 24px;
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    appearance: none;
+    margin: 0;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      border-radius: 50%;
+      transition: left 0.3s ease;
+    }
+
+    &:checked {
+      &::before {
+        left: 21px;
+      }
+    }
+  }
+
+  &-primary {
+    .checkboxToggle-text {
+      color: $color-white;
+    }
+
+    .checkboxToggle-icon {
+      border: 3px solid $color-white;
+      background-color: $color-primary;
+
+      &::before {
+        background-color: $color-white;
+      }
+
+      &:checked {
+        background-color: $color-white;
+
+        &::before {
+          background-color: $color-primary;
+        }
+      }
+    }
+  }
+
+  &-secondary {
+    .checkboxToggle-text {
+      color: $color-gray-500;
+    }
+
+    .checkboxToggle-icon {
+      border: 3px solid $color-gray-500;
+      background-color: $color-white;
+
+      &::before {
+        background-color: $color-gray-500;
+      }
+
+      &:checked {
+        background-color: $color-gray-500;
+
+        &::before {
+          background-color: $color-white;
+        }
+      }
+    }
+  }
+}
+
+.inputFile {
+  position: relative;
+
+  &-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  &-text {
+    color: $color-gray-500;
+    display: flex;
+    align-items: center;
+    line-height: 1.1;
+
+    i {
+      color: $color-gray-500;
+      font-size: 15px;
+      margin-right: 10px;
+    }
+
+    @include media-max($break-point) {
+      i {
+        font-size: 21px;
+      }
+    }
+  }
+}
+
+.box-input {
+  height: 50px;
+  border: 1px solid $color-gray-200;
+  border-radius: 30px;
+  width: 100%;
+  position: relative;
+  line-height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 10px 60px 10px 20px;
+
+  .main-input {
+    width: 100%;
+    height: 100%;
+    max-height: 105px;
+    line-height: 1.5;
+    border: none;
+    box-sizing: border-box;
+    resize: none;
+  }
+
+  @include media-max($break-point) {
+    height: auto;
+    min-height: 45px;
+    padding: 6px 45px 6px 15px;
+
+    .main-input {
+      font-size: 14px;
+      overflow: hidden;
+    }
+  }
+}
+
+

@@ -1,0 +1,35 @@
+html{
+    overflow: hidden;
+    
+}
+body {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    @include media-max($break-point) {
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+
+        .main {
+            height: calc((var(--vh, 1vh) * 100) - 60px);
+        }
+        .aside {
+           &-right{
+            height: calc((var(--vh, 1vh) * 100) - 80px);
+           }
+        }
+
+        &.no-fixed {
+            .header {
+                display: none;
+            }
+
+            .main {
+                z-index: 99;
+                margin-top: 0;
+            }
+        }
+    }
+
+}

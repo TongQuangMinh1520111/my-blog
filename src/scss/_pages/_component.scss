@@ -1,0 +1,8 @@
+.component {
+  background-color: $color-gray-100;
+  &-list {
+    li {
+      margin-top: 15px;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.title01 {
+    margin: 0 0 10px;
+
+    @include media-max($break-point) {
+        font-size: 20px;
+        margin: 0 0 20px;
+    }
+
+}
